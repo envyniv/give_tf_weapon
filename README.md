@@ -73,4 +73,5 @@ Signed:
 
 ## Todo
 - [ ] Add Weapon dropping functionality
+- [ ] Fix original HowToUse
 		

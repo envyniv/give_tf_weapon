@@ -80,4 +80,3 @@ if ( CVAR_GTFW_DEBUG_MODE )
 //IncludeScript("give_tf_weapon/extra/text_listener.nut")		//Optional chat command "!give"
 IncludeScript("give_tf_weapon/libs/netpropperf.nut")	//according to ficool2, reduces NetProps runtime by some-20%!
 IncludeScript("give_tf_weapon/code/__exec.nut")			// Executes all functions that this script uses!
-IncludeScript("give_tf_weapon/custom_weapons/_all.nut")	// Executes all custom weapons written in the file!
