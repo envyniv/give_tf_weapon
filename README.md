@@ -1,6 +1,4 @@
-# original give_tf_weapon by [Yakibomb](https://github.com/yakibomb)
-
-#### for the changes, see [here](#envyn)
+# give_tf_weapon by [Yakibomb](https://github.com/yakibomb)
 
 ## How Do I Use VScript?
 1. Watch [this tutorial by TopHattWaffle on How to Use VScript](https://www.youtube.com/watch?v=p05bQ8ds8-w)
@@ -61,17 +59,3 @@ script GetListenServerHost().GiveWeapon("Shotgun Pickup")
 Have fun, modders!
 Signed:
 - Yaki, 30 May 23
-
----
-
-# give_tf_weapon - the envyn branch
-<a name=envyn>
-
-## Changes
-- Moved custom weapons to own repo, the scripts are to be included manually.
-- Removed `_all.nut`, see above.
-
-## Todo
-- [ ] Add Weapon dropping functionality
-- [ ] Fix original HowToUse
-		
