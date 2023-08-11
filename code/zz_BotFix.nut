@@ -27,6 +27,10 @@
 ::CTFBot.HasGunslinger <- CTFPlayer.HasGunslinger
 ::CTFBot.AddWeapon <- CTFPlayer.AddWeapon
 
+// These two reimplement functions that exist but do nothing
+::CTFBot.Weapon_Drop <- CTFPlayer.Weapon_Drop
+::CTFBot.Weapon_DropEx <- CTFPlayer.Weapon_DropEx
+
 //-----------------------------------------------------------------------------
 //	Purpose: Renames in case someone else was using these function names before
 //-----------------------------------------------------------------------------
@@ -55,3 +59,9 @@
 ::CTFPlayer.GTFW_LoadLoadout <- CTFPlayer.LoadLoadout
 ::CTFPlayer.GTFW_SaveLoadout <- CTFPlayer.SaveLoadout
 ::CTFPlayer.GTFW_DeleteLoadout <- CTFPlayer.DeleteLoadout
+
+//Weapon_Drop
+::CTFPlayer.DropWeapon <- CTFPlayer.Weapon_Drop
+::CTFBot.DropWeaponEx <- CTFPlayer.Weapon_DropEx
+::CTFBot.DropWeapon <- CTFPlayer.Weapon_Drop
+::CTFBot.DropWeaponEx <- CTFPlayer.Weapon_DropEx

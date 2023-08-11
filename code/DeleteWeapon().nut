@@ -56,3 +56,16 @@
 	
 	return true
 }
+
+::CTFPlayer.ClearWeapons <- function() {
+	for (local slot = 0; slot < 7; slot++) {
+    local weapon = NetProps.GetPropEntityArray(this, "m_hMyWeapons", slot)
+    if (weapon) {
+      if (weapon.GetSlot() == 2) // melee
+        this.Weapon_Switch(weapon) // switch to melee
+      else
+        this.DeleteWeapon(weapon)
+        // nuke everything else
+    }
+	}
+}

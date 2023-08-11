@@ -7,7 +7,11 @@
 //-----------------------------------------------------------------------------
 
 
-function OnGameEvent_player_say(params)
+EventBus.Listen("player_say", function(params) //{
+
+//}, this)
+
+//function OnGameEvent_player_say(params)
 {
 	//Define variables
 	local player = GetPlayerFromUserID(params.userid);	//User typing the message in chat
@@ -63,8 +67,8 @@ function OnGameEvent_player_say(params)
 				player.GiveWeapon(weapon);
 		}
 	}
-}
-	__CollectGameEventCallbacks(this)
+}, this)
+//__CollectGameEventCallbacks(this)
 
 // New function
 // Grabs target in front of player in a straight line for us to use as a handle

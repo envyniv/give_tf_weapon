@@ -1,3 +1,8 @@
+if (!EventBus) {
+	printl("This script requires EventBus!")
+	return
+}
+
 ::GTFW <- { "Version" : "5.3.0" }
 
 //-----------------------------------------------------------------------------
@@ -18,6 +23,7 @@
 
 	ClearGameEventCallbacks()	//Clears any pre-existing OnGameEvent listeners. WARNING: If using other events, probably put this function at the top of your script and disable it here.
 
+/*
 function OnGameEvent_post_inventory_application(params)	//Defines post_inventory_application event listener
 {
 	if ("userid" in params)
@@ -31,7 +37,22 @@ function OnGameEvent_post_inventory_application(params)	//Defines post_inventory
 		EntFireByHandle(hPlayer,"RunScriptCode","self.LoadLoadout()",0.0,hPlayer,hPlayer);	// Allows for weapons to persist between touching the resupply. (as long as the weapon was saved when grabbed!)
 	}
 }
-	__CollectGameEventCallbacks(this)	// Adds all listeners defined to the roottable to make them work!
+*/
+
+EventBus.Listen("post_inventory_application", function(params) {
+	if ("userid" in params)
+	{
+	//Defines player handle as hPlayer
+		local hPlayer = GetPlayerFromUserID(params.userid)
+
+	// REQUIRED ( Must be at the beginning! )
+		hPlayer.GTFW_Cleanup()	// Deletes any parented entities on the player made by this script.
+	// OPTIONAL ( Can be placed at beginning )
+		EntFireByHandle(hPlayer,"RunScriptCode","self.LoadLoadout()",0.0,hPlayer,hPlayer);	// Allows for weapons to persist between touching the resupply. (as long as the weapon was saved when grabbed!)
+	}
+}, this)
+
+//__CollectGameEventCallbacks(this)	// Adds all listeners defined to the roottable to make them work!
 
 
 //-----------------------------------------------------------------------------

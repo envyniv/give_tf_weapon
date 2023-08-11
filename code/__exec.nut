@@ -25,6 +25,7 @@ gtfw_exec_code <- [
 "GiveWeapon()",
 "GetWeapon()",
 "DeleteWeapon()",
+"DropWeapon",
 
 //third batch
 "AnnounceWeapon()",
